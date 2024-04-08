@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+package numbers;
+
+service NumbersService {
+  rpc GetNumberSequence(NumberRequest) returns (stream NumberResponse) {}
+}
+
+message NumberRequest {
+  int32 firstValue = 1;
+  int32 lastValue = 2;
+}
+
+message NumberResponse {
+  int32 value = 1;
+}
